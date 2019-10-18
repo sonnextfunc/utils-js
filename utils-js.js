@@ -6,6 +6,24 @@ function sortArryByKey(arr = [], key = "id", isDescending = false) {
     return newArr;
 }
 
+/**
+ * Returns TRUE if the first specified array contains all elements
+ * from the second one. FALSE otherwise.
+ *
+ * @param {array} superset
+ * @param {array} subset
+ *
+ * @returns {boolean}
+ */
+function arrayContainsArray (superset, subset) {
+  if (0 === subset.length) {
+    return false;
+  }
+  return subset.every(function (value) {
+    return (superset.indexOf(value) >= 0);
+  });
+}
+
 function capitalize1stLetter(text = "") {
     const lower = text.toLowerCase();
     const upper = lower.charAt(0).toUpperCase() + lower.substr(1);
